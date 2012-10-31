@@ -11,8 +11,8 @@ Data were obtained from the CD-ROM accompanying the U.S. (2004) edition and from
 \tabular{ll}{
 Package: \tab MindOnStats\cr
 Type: \tab Package\cr
-Version: \tab 0.0\cr
-Date: \tab 2010-10-04\cr
+Version: \tab 0.7\cr
+Date: \tab 2012-01-05\cr
 License: \tab What license is it under?\cr
 LazyLoad: \tab yes\cr
 }

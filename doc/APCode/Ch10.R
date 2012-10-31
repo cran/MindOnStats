@@ -1,68 +1,61 @@
+### R code from vignette source 'Ch10.rnw'
+
 ###################################################
-### chunk number 1: setup
+### code chunk number 1: setup
 ###################################################
-#line 7 "Ch10.rnw"
 source("GenericSettings.R")
 
 
 ###################################################
-### chunk number 2: 
+### code chunk number 2: Ch10.rnw:18-19
 ###################################################
-#line 18 "Ch10.rnw"
 qt(c(0.025, 0.975), df=24)
 
 
 ###################################################
-### chunk number 3: 
+### code chunk number 3: Ch10.rnw:24-25
 ###################################################
-#line 24 "Ch10.rnw"
 PhoneCalls=c(0.19,0.78,0.96,1.31,2.78,3.16,4.15,4.67,4.85,6.5,7.35,8.01,8.29,12.06,31.75,32.52,33.91,36.71,72.89)
 
 
 ###################################################
-### chunk number 4: 
+### code chunk number 4: Ch10.rnw:29-31
 ###################################################
-#line 29 "Ch10.rnw"
 t.test(PhoneCalls)
 wilcox.test(PhoneCalls, conf.int=TRUE)
 
 
 ###################################################
-### chunk number 5: 
+### code chunk number 5: Ch10.rnw:47-49
 ###################################################
-#line 47 "Ch10.rnw"
 data(Reflexes, package="MindOnStats")
 str(Reflexes)
 
 
 ###################################################
-### chunk number 6: 
+### code chunk number 6: Ch10.rnw:52-55
 ###################################################
-#line 52 "Ch10.rnw"
 attach(Reflexes)
 t.test(RightFluoro, RightClear, paired=TRUE)
 detach(Reflexes)
 
 
 ###################################################
-### chunk number 7: 
+### code chunk number 7: Ch10.rnw:59-60
 ###################################################
-#line 59 "Ch10.rnw"
 data(HoldingBreath, package="MindOnStats")
 
 
 ###################################################
-### chunk number 8: 
+### code chunk number 8: Ch10.rnw:63-65
 ###################################################
-#line 63 "Ch10.rnw"
 t.test(Time~Smoker, data=HoldingBreath)
 t.test(Time~Smoker, data=HoldingBreath, var.equal=TRUE)
 
 
 ###################################################
-### chunk number 9: 
+### code chunk number 9: Ch10.rnw:76-79
 ###################################################
-#line 76 "Ch10.rnw"
 qchisq(c(0.025,0.975), df=12)
 12*0.024^2/qchisq(c(0.025,0.975), df=12)
 sqrt(12*0.024^2/qchisq(c(0.975,0.025), df=12))

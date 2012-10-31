@@ -1,30 +1,28 @@
+### R code from vignette source 'Ch5.rnw'
+
 ###################################################
-### chunk number 1: setup
+### code chunk number 1: setup
 ###################################################
-#line 7 "Ch5.rnw"
 source("GenericSettings.R")
 
 
 ###################################################
-### chunk number 2: 
+### code chunk number 2: Ch5.rnw:16-18
 ###################################################
-#line 16 "Ch5.rnw"
 data(PopSong, package="MindOnStats")
 str(PopSong)
 
 
 ###################################################
-### chunk number 3: 
+### code chunk number 3: Ch5.rnw:22-24
 ###################################################
-#line 22 "Ch5.rnw"
 PopSong01 =PopSong[PopSong$Year==2001,]
 str(PopSong01)
 
 
 ###################################################
-### chunk number 4: 
+### code chunk number 4: Ch5.rnw:27-31
 ###################################################
-#line 27 "Ch5.rnw"
 attach(PopSong01)
 tapply(Genre, Genre, length)
 length(Genre)
@@ -32,53 +30,46 @@ tapply(Genre, Genre, length)/length(Genre)
 
 
 ###################################################
-### chunk number 5: 1GenreBarPlot
+### code chunk number 5: 1GenreBarPlot
 ###################################################
-#line 35 "Ch5.rnw"
 plot(Genre, xlab="Genre", ylab="Count", main="Counts of Songs by Genre for 2001")
 
 
 ###################################################
-### chunk number 6: 
+### code chunk number 6: Ch5.rnw:39-40
 ###################################################
-#line 39 "Ch5.rnw"
 detach(PopSong01)
 
 
 ###################################################
-### chunk number 7: 
+### code chunk number 7: Ch5.rnw:47-48
 ###################################################
-#line 47 "Ch5.rnw"
 aggregate(Position~Chart+Country+Author, data=PopSong, FUN=length)
 
 
 ###################################################
-### chunk number 8: 
+### code chunk number 8: Ch5.rnw:55-56
 ###################################################
-#line 55 "Ch5.rnw"
 pchisq(5.935, df=2, lower.tail=FALSE)
 
 
 ###################################################
-### chunk number 9: 
+### code chunk number 9: Ch5.rnw:60-61
 ###################################################
-#line 60 "Ch5.rnw"
 chisq.test(x=c(42, 49, 69), p=c(0.22, 0.4, 0.38))
 
 
 ###################################################
-### chunk number 10: 
+### code chunk number 10: Ch5.rnw:70-73
 ###################################################
-#line 70 "Ch5.rnw"
 attach(PopSong)
 tapply(Position, list(Genre, Chart), length)
 detach(PopSong)
 
 
 ###################################################
-### chunk number 11: 
+### code chunk number 11: Ch5.rnw:76-84
 ###################################################
-#line 76 "Ch5.rnw"
 attach(PopSong)
 NewGenre = Genre
 levels(NewGenre)
@@ -90,16 +81,14 @@ detach(PopSong)
 
 
 ###################################################
-### chunk number 12: 
+### code chunk number 12: Ch5.rnw:88-89
 ###################################################
-#line 88 "Ch5.rnw"
 chisq.test(NewGenre, PopSong$Chart)
 
 
 ###################################################
-### chunk number 13: 
+### code chunk number 13: Ch5.rnw:93-97
 ###################################################
-#line 93 "Ch5.rnw"
 BreastCancer = matrix(c(166,8340, 124, 7978), nrow=2, byrow=TRUE)
 dimnames(BreastCancer)[[1]] = c("Hormones", "Placebo")
 dimnames(BreastCancer)[[2]] = c("Yes", "No")
@@ -107,9 +96,8 @@ BreastCancer
 
 
 ###################################################
-### chunk number 14: 
+### code chunk number 14: Ch5.rnw:100-101
 ###################################################
-#line 100 "Ch5.rnw"
 chisq.test(BreastCancer)
 
 

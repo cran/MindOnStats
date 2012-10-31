@@ -1,44 +1,40 @@
+### R code from vignette source 'Ch14.rnw'
+
 ###################################################
-### chunk number 1: setup
+### code chunk number 1: setup
 ###################################################
-#line 7 "Ch14.rnw"
 source("GenericSettings.R")
 
 
 ###################################################
-### chunk number 2: 
+### code chunk number 2: Ch14.rnw:15-16
 ###################################################
-#line 15 "Ch14.rnw"
 data(Reflexes, package="MindOnStats")
 
 
 ###################################################
-### chunk number 3: 
+### code chunk number 3: Ch14.rnw:22-24
 ###################################################
-#line 22 "Ch14.rnw"
 Reflexes.glm = glm(Miss~Age, data=Reflexes, family="binomial")
 summary(Reflexes.glm)
 
 
 ###################################################
-### chunk number 4: 
+### code chunk number 4: Ch14.rnw:31-33
 ###################################################
-#line 31 "Ch14.rnw"
 Coeff = summary(Reflexes.glm)$coef
 Coeff
 
 
 ###################################################
-### chunk number 5: 
+### code chunk number 5: Ch14.rnw:36-37
 ###################################################
-#line 36 "Ch14.rnw"
 Coeff[2,1] +c(-1.96,1.96)*Coeff[2,2]
 
 
 ###################################################
-### chunk number 6: 
+### code chunk number 6: Ch14.rnw:40-41
 ###################################################
-#line 40 "Ch14.rnw"
 exp(Coeff[2,1] +c(-1.96,1.96)*Coeff[2,2])
 
 

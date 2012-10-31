@@ -1,14 +1,14 @@
+### R code from vignette source 'Ch1.rnw'
+
 ###################################################
-### chunk number 1: setup
+### code chunk number 1: setup
 ###################################################
-#line 5 "Ch1.rnw"
 source("GenericSettings.R")
 
 
 ###################################################
-### chunk number 2: 
+### code chunk number 2: Ch1.rnw:25-27
 ###################################################
-#line 25 "Ch1.rnw"
 head(quakes)
 str(quakes)
 

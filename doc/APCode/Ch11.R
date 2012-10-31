@@ -1,30 +1,28 @@
+### R code from vignette source 'Ch11.rnw'
+
 ###################################################
-### chunk number 1: setup
+### code chunk number 1: setup
 ###################################################
-#line 7 "Ch11.rnw"
 source("GenericSettings.R")
 
 
 ###################################################
-### chunk number 2: 
+### code chunk number 2: Ch11.rnw:21-23
 ###################################################
-#line 22 "Ch11.rnw"
 sum(dbinom(7:10, size=10, prob=0.5))
 pbinom(6, size=10, prob=0.5, lower.tail=FALSE)
 
 
 ###################################################
-### chunk number 3: 
+### code chunk number 3: Ch11.rnw:26-28
 ###################################################
-#line 27 "Ch11.rnw"
 sum(dbinom(8:10, size=10, prob=0.5))
 pbinom(7, size=10, prob=0.5, lower.tail=FALSE)
 
 
 ###################################################
-### chunk number 4: 
+### code chunk number 4: Ch11.rnw:33-38
 ###################################################
-#line 34 "Ch11.rnw"
 p=0.5
 n=100
 s=sqrt(p*(1-p)/n)
@@ -33,9 +31,8 @@ qnorm(0.95, mean=p, sd=s, lower.tail=FALSE)
 
 
 ###################################################
-### chunk number 5: 
+### code chunk number 5: Ch11.rnw:43-47
 ###################################################
-#line 44 "Ch11.rnw"
 p=0.5
 n=203
 s=sqrt(p*(1-p)/n)
@@ -43,133 +40,115 @@ pnorm(87/203, mean=p, sd=s, lower.tail=FALSE)
 
 
 ###################################################
-### chunk number 6: 
+### code chunk number 6: Ch11.rnw:49-50
 ###################################################
-#line 50 "Ch11.rnw"
 binom.test(87,203, alternative="less")
 
 
 ###################################################
-### chunk number 7: 
+### code chunk number 7: Ch11.rnw:52-53
 ###################################################
-#line 53 "Ch11.rnw"
 prop.test(87,203, alternative="less")
 
 
 ###################################################
-### chunk number 8: 
+### code chunk number 8: Ch11.rnw:55-56
 ###################################################
-#line 56 "Ch11.rnw"
 prop.test(87,203, , alternative="less", correct=FALSE)
 
 
 ###################################################
-### chunk number 9: 
+### code chunk number 9: Ch11.rnw:62-63
 ###################################################
-#line 63 "Ch11.rnw"
 binom.test(68,400, p=0.2, alternative="less")
 
 
 ###################################################
-### chunk number 10: 
+### code chunk number 10: Ch11.rnw:65-66
 ###################################################
-#line 66 "Ch11.rnw"
 prop.test(68,400, p=0.2, alternative="less")
 
 
 ###################################################
-### chunk number 11: 
+### code chunk number 11: Ch11.rnw:68-69
 ###################################################
-#line 69 "Ch11.rnw"
 prop.test(68,400, p=0.2, alternative="less", correct=FALSE)
 
 
 ###################################################
-### chunk number 12: 
+### code chunk number 12: Ch11.rnw:74-75
 ###################################################
-#line 75 "Ch11.rnw"
 prop.test(c(65,51), c(111,92))
 
 
 ###################################################
-### chunk number 13: 
+### code chunk number 13: Ch11.rnw:82-84
 ###################################################
-#line 83 "Ch11.rnw"
 Ex11.11 = matrix(c(10,37,11,54), nrow=2)
 Ex11.11
 
 
 ###################################################
-### chunk number 14: 
+### code chunk number 14: Ch11.rnw:87-88
 ###################################################
-#line 88 "Ch11.rnw"
 prop.test(c(10,11), c(47,65))
 
 
 ###################################################
-### chunk number 15: 
+### code chunk number 15: Ch11.rnw:91-92
 ###################################################
-#line 92 "Ch11.rnw"
 chisq.test(Ex11.11)
 
 
 ###################################################
-### chunk number 16: 
+### code chunk number 16: Ch11.rnw:94-95
 ###################################################
-#line 95 "Ch11.rnw"
 fisher.test(Ex11.11)
 
 
 ###################################################
-### chunk number 17: 
+### code chunk number 17: Ch11.rnw:99-100
 ###################################################
-#line 100 "Ch11.rnw"
 fisher.test(Ex11.11, alternative="greater")
 
 
 ###################################################
-### chunk number 18: 
+### code chunk number 18: Ch11.rnw:106-107
 ###################################################
-#line 107 "Ch11.rnw"
 data(GoGoGo, package="MindOnStats")
 
 
 ###################################################
-### chunk number 19: 
+### code chunk number 19: Ch11.rnw:110-112
 ###################################################
-#line 111 "Ch11.rnw"
 AmberLights = GoGoGo$Time[GoGoGo$Lights=="amber"]
 t.test(AmberLights, mu=3.6, alternative="less")
 
 
 ###################################################
-### chunk number 20: 
+### code chunk number 20: Ch11.rnw:121-124
 ###################################################
-#line 122 "Ch11.rnw"
 Airport=c(283591,269620,312220,300679,217889,381030,232288,186285,230672,248172,221898,257073)
 City=c(188010,197874,193954,210545,212116,277022,239715,197761,256650,182655,146602,149663)
 t.test(Airport, City, paired=T)
 
 
 ###################################################
-### chunk number 21: 
+### code chunk number 21: Ch11.rnw:127-129
 ###################################################
-#line 128 "Ch11.rnw"
 Difference=Airport-City
 t.test(Difference)
 
 
 ###################################################
-### chunk number 22: 
+### code chunk number 22: Ch11.rnw:137-138
 ###################################################
-#line 138 "Ch11.rnw"
 t.test(Time~Lights, data=GoGoGo)
 
 
 ###################################################
-### chunk number 23: 
+### code chunk number 23: Ch11.rnw:145-149
 ###################################################
-#line 146 "Ch11.rnw"
 data(Reflexes, package="MindOnStats")
 attach(Reflexes)
 wilcox.test(RightFluoro,RightClear, paired=TRUE, alternative="less")
@@ -177,38 +156,33 @@ detach(Reflexes)
 
 
 ###################################################
-### chunk number 24: 
+### code chunk number 24: Ch11.rnw:154-155
 ###################################################
-#line 155 "Ch11.rnw"
 wilcox.test(RightFluoro~Gender, data=Reflexes)
 
 
 ###################################################
-### chunk number 25: 
+### code chunk number 25: Ch11.rnw:164-166
 ###################################################
-#line 165 "Ch11.rnw"
 TestVal=28*0.25/0.35
 pchisq(20 ,df=28)
 
 
 ###################################################
-### chunk number 26: 
+### code chunk number 26: Ch11.rnw:170-171
 ###################################################
-#line 171 "Ch11.rnw"
 pf(4/2.25, df1=9, df2=14, lower.tail=FALSE)
 
 
 ###################################################
-### chunk number 27: 
+### code chunk number 27: Ch11.rnw:193-194
 ###################################################
-#line 194 "Ch11.rnw"
 power.t.test(delta=0.5, sd=1, sig.level=0.05, power=0.8, type="one.sample", alternative="one.sided")
 
 
 ###################################################
-### chunk number 28: 
+### code chunk number 28: Ch11.rnw:199-200
 ###################################################
-#line 200 "Ch11.rnw"
 power.t.test(n=20, delta=0.8, sd=1, sig.level=0.05, type="one.sample", alternative="one.sided")
 
 

@@ -1,14 +1,14 @@
+### R code from vignette source 'Ch0.rnw'
+
 ###################################################
-### chunk number 1: setup
+### code chunk number 1: setup
 ###################################################
-#line 6 "Ch0.rnw"
 source("GenericSettings.R")
 
 
 ###################################################
-### chunk number 2: 
+### code chunk number 2: Ch0.rnw:62-66
 ###################################################
-#line 63 "Ch0.rnw"
 1+1
 2*5
 10/3
@@ -16,53 +16,46 @@ source("GenericSettings.R")
 
 
 ###################################################
-### chunk number 3: 
+### code chunk number 3: Ch0.rnw:71-72
 ###################################################
-#line 72 "Ch0.rnw"
 sqrt(25)
 
 
 ###################################################
-### chunk number 4: 
+### code chunk number 4: Ch0.rnw:77-79
 ###################################################
-#line 78 "Ch0.rnw"
 x=25
 y=1000
 
 
 ###################################################
-### chunk number 5: 
+### code chunk number 5: Ch0.rnw:82-83
 ###################################################
-#line 83 "Ch0.rnw"
 sqrt(x)
 
 
 ###################################################
-### chunk number 6: 
+### code chunk number 6: Ch0.rnw:86-87
 ###################################################
-#line 87 "Ch0.rnw"
 y
 
 
 ###################################################
-### chunk number 7: 
+### code chunk number 7: Ch0.rnw:97-98
 ###################################################
-#line 98 "Ch0.rnw"
 ls()
 
 
 ###################################################
-### chunk number 8: 
+### code chunk number 8: Ch0.rnw:101-103
 ###################################################
-#line 102 "Ch0.rnw"
 rm(x)
 ls()
 
 
 ###################################################
-### chunk number 9: 
+### code chunk number 9: Ch0.rnw:111-115
 ###################################################
-#line 112 "Ch0.rnw"
 Days=1:30
 Days
 Months=c("April", "June", "September", "November")
@@ -70,37 +63,32 @@ Months
 
 
 ###################################################
-### chunk number 10:  eval=FALSE
+### code chunk number 10: Ch0.rnw:132-133 (eval = FALSE)
 ###################################################
-## #line 133 "Ch0.rnw"
 ## MyData = read.csv("MyFirstData.csv")
 
 
 ###################################################
-### chunk number 11:  eval=FALSE
+### code chunk number 11: Ch0.rnw:136-137 (eval = FALSE)
 ###################################################
-## #line 137 "Ch0.rnw"
 ## dim(MyData)
 
 
 ###################################################
-### chunk number 12:  eval=FALSE
+### code chunk number 12: Ch0.rnw:140-141 (eval = FALSE)
 ###################################################
-## #line 141 "Ch0.rnw"
 ## str(MyData)
 
 
 ###################################################
-### chunk number 13:  eval=FALSE
+### code chunk number 13: Ch0.rnw:144-145 (eval = FALSE)
 ###################################################
-## #line 145 "Ch0.rnw"
 ## MyData = read.csv("MyFirstData.csv", header=TRUE)
 
 
 ###################################################
-### chunk number 14:  eval=FALSE
+### code chunk number 14: Ch0.rnw:148-149 (eval = FALSE)
 ###################################################
-## #line 149 "Ch0.rnw"
 ## MyData = read.csv("MyFirstData.csv", header=FALSE)
 
 

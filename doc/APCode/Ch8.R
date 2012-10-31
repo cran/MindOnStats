@@ -1,238 +1,210 @@
+### R code from vignette source 'Ch8.rnw'
+
 ###################################################
-### chunk number 1: setup
+### code chunk number 1: setup
 ###################################################
-#line 7 "Ch8.rnw"
 source("GenericSettings.R")
 
 
 ###################################################
-### chunk number 2: 
+### code chunk number 2: Ch8.rnw:21-23
 ###################################################
-#line 21 "Ch8.rnw"
 data(GoGoGo, package="MindOnStats")
 str(GoGoGo)
 
 
 ###################################################
-### chunk number 3: 
+### code chunk number 3: Ch8.rnw:29-31
 ###################################################
-#line 29 "Ch8.rnw"
 GreenLights.aov = aov(Time~AgeGroup, data=GoGoGo, subset=Lights=="green")
 summary(GreenLights.aov)
 
 
 ###################################################
-### chunk number 4: 
+### code chunk number 4: Ch8.rnw:36-37
 ###################################################
-#line 36 "Ch8.rnw"
 data(Textbooks, package="MindOnStats")
 
 
 ###################################################
-### chunk number 5: 
+### code chunk number 5: Ch8.rnw:41-42
 ###################################################
-#line 41 "Ch8.rnw"
 summary(Price.aov1 <- aov(Price~Discipline, data=Textbooks))
 
 
 ###################################################
-### chunk number 6: 
+### code chunk number 6: Ch8.rnw:51-54
 ###################################################
-#line 51 "Ch8.rnw"
 data(PaperPlanes, package="MindOnStats")
 dim(PaperPlanes)
 head(PaperPlanes)
 
 
 ###################################################
-### chunk number 7: 
+### code chunk number 7: Ch8.rnw:58-61
 ###################################################
-#line 58 "Ch8.rnw"
 StingRay = PaperPlanes[PaperPlanes$Design=="stingray glider",]
 dim(StingRay)
 head(StingRay)
 
 
 ###################################################
-### chunk number 8: 4StingRayBoxPlots
+### code chunk number 8: 4StingRayBoxPlots
 ###################################################
-#line 69 "Ch8.rnw"
 boxplot(FlightTime~Paper, data=StingRay)
 
 
 ###################################################
-### chunk number 9: 
+### code chunk number 9: Ch8.rnw:73-74
 ###################################################
-#line 73 "Ch8.rnw"
 summary(StingRay.aov1 <- aov(FlightTime~Paper, data=StingRay))
 
 
 ###################################################
-### chunk number 10: XGreenLightsResidPlots
+### code chunk number 10: XGreenLightsResidPlots
 ###################################################
-#line 84 "Ch8.rnw"
 par(mfrow=c(2,2))
 plot(GreenLights.aov)
 
 
 ###################################################
-### chunk number 11: 6GreenLightsResidFits
+### code chunk number 11: 6GreenLightsResidFits
 ###################################################
-#line 96 "Ch8.rnw"
 Residuals = residuals(GreenLights.aov)
 Fits = fitted(GreenLights.aov)
 plot(Residuals~Fits)
 
 
 ###################################################
-### chunk number 12: 6GreenLightsQQNorm
+### code chunk number 12: 6GreenLightsQQNorm
 ###################################################
-#line 101 "Ch8.rnw"
 qqnorm(Residuals)
 qqline(Residuals)
 
 
 ###################################################
-### chunk number 13: 
+### code chunk number 13: Ch8.rnw:112-113
 ###################################################
-#line 112 "Ch8.rnw"
 summary(StingRay.aov2 <- aov(log(FlightTime)~Paper, data=StingRay))
 
 
 ###################################################
-### chunk number 14: 9StingRayResidQQNorm
+### code chunk number 14: 9StingRayResidQQNorm
 ###################################################
-#line 119 "Ch8.rnw"
 Residuals = residuals(StingRay.aov2)
 qqnorm(Residuals)
 qqline(Residuals)
 
 
 ###################################################
-### chunk number 15: 9StingRayResidVFits
+### code chunk number 15: 9StingRayResidVFits
 ###################################################
-#line 124 "Ch8.rnw"
 Fits = fitted(StingRay.aov2)
 plot(Residuals~Fits)
 
 
 ###################################################
-### chunk number 16: 10StingRayLogResidQQNorm
+### code chunk number 16: 10StingRayLogResidQQNorm
 ###################################################
-#line 136 "Ch8.rnw"
 Residuals = residuals(StingRay.aov2)
 qqnorm(Residuals)
 qqline(Residuals)
 
 
 ###################################################
-### chunk number 17: 10StingRayLogResidVFits
+### code chunk number 17: 10StingRayLogResidVFits
 ###################################################
-#line 141 "Ch8.rnw"
 Fits = fitted(StingRay.aov2)
 plot(Residuals~Fits)
 
 
 ###################################################
-### chunk number 18: 
+### code chunk number 18: Ch8.rnw:157-158
 ###################################################
-#line 157 "Ch8.rnw"
 kruskal.test(FlightTime~Paper, data=StingRay)
 
 
 ###################################################
-### chunk number 19: 
+### code chunk number 19: Ch8.rnw:170-172
 ###################################################
-#line 170 "Ch8.rnw"
 GreenLights.HSD = TukeyHSD(GreenLights.aov)
 GreenLights.HSD
 
 
 ###################################################
-### chunk number 20: 13Tukey
+### code chunk number 20: 13Tukey
 ###################################################
-#line 177 "Ch8.rnw"
 plot(GreenLights.HSD)
 
 
 ###################################################
-### chunk number 21: 
+### code chunk number 21: Ch8.rnw:188-189
 ###################################################
-#line 188 "Ch8.rnw"
 data(TimePerception, package="MindOnStats")
 
 
 ###################################################
-### chunk number 22: 
+### code chunk number 22: Ch8.rnw:193-194
 ###################################################
-#line 193 "Ch8.rnw"
 summary(aov(TenSec~Gender*AgeGroup, data=TimePerception))
 
 
 ###################################################
-### chunk number 23: 15TimeIntPlot
+### code chunk number 23: 15TimeIntPlot
 ###################################################
-#line 199 "Ch8.rnw"
 attach(TimePerception)
 interaction.plot(response=TenSec, x.factor=AgeGroup, trace.factor=Gender)
 detach(TimePerception)
 
 
 ###################################################
-### chunk number 24: 
+### code chunk number 24: Ch8.rnw:210-213
 ###################################################
-#line 210 "Ch8.rnw"
 summary(Planes.aov2 <- aov(FlightTime~Paper*Design, data=PaperPlanes))
 lnFlightTime = log(PaperPlanes$FlightTime)
 summary(Planes.aov3 <- aov(lnFlightTime~Paper*Design, data=PaperPlanes))
 
 
 ###################################################
-### chunk number 25: 18PlanesResidQQNorm
+### code chunk number 25: 18PlanesResidQQNorm
 ###################################################
-#line 218 "Ch8.rnw"
 Residuals = residuals(Planes.aov2)
 qqnorm(Residuals)
 qqline(Residuals)
 
 
 ###################################################
-### chunk number 26: 18PlanesResidVFits
+### code chunk number 26: 18PlanesResidVFits
 ###################################################
-#line 223 "Ch8.rnw"
 Fits = fitted(Planes.aov2)
 plot(Residuals~Fits)
 
 
 ###################################################
-### chunk number 27: 19PlanesLogResidQQNorm
+### code chunk number 27: 19PlanesLogResidQQNorm
 ###################################################
-#line 235 "Ch8.rnw"
 Residuals = residuals(Planes.aov3)
 qqnorm(Residuals)
 qqline(Residuals)
 
 
 ###################################################
-### chunk number 28: 19PlanesLogResidVFits
+### code chunk number 28: 19PlanesLogResidVFits
 ###################################################
-#line 240 "Ch8.rnw"
 Fits = fitted(Planes.aov3)
 plot(Residuals~Fits)
 
 
 ###################################################
-### chunk number 29: 
+### code chunk number 29: Ch8.rnw:251-253
 ###################################################
-#line 251 "Ch8.rnw"
 summary(aov(Time~Gender*Lights, data=GoGoGo))
 summary(aov(Time~Lights*Gender, data=GoGoGo))
 
 
 ###################################################
-### chunk number 30: 
+### code chunk number 30: Ch8.rnw:261-262
 ###################################################
-#line 261 "Ch8.rnw"
 bartlett.test(Price~Discipline, data=Textbooks)
 
 

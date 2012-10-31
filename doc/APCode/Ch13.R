@@ -1,7 +1,8 @@
+### R code from vignette source 'Ch13.rnw'
+
 ###################################################
-### chunk number 1: setup
+### code chunk number 1: setup
 ###################################################
-#line 7 "Ch13.rnw"
 source("GenericSettings.R")
 
 
